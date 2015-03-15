@@ -21,5 +21,15 @@
 //
 package javax.security.auth.event;
 
-public class TokenAuthentication {
+public class TokenAuthentication extends Authentication {
+
+    private final String token;
+
+    public TokenAuthentication(String token) {
+        this.token = token;
+    }
+
+    public String getToken() {
+        return token;
+    }
 }

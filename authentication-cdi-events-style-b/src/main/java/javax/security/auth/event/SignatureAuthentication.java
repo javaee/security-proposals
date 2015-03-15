@@ -23,13 +23,31 @@ package javax.security.auth.event;
 
 public class SignatureAuthentication extends Authentication {
 
-    private final String token;
+    private final String keyId;
+    private final String algorithm;
+    private final String[] headers;
+    private final String signature;
 
-    public SignatureAuthentication(String token) {
-        this.token = token;
+    public SignatureAuthentication(final String keyId, final String algorithm, final String[] headers, final String signature) {
+        this.keyId = keyId;
+        this.algorithm = algorithm;
+        this.headers = headers;
+        this.signature = signature;
     }
 
-    public String getToken() {
-        return token;
+    public String getKeyId() {
+        return keyId;
+    }
+
+    public String getAlgorithm() {
+        return algorithm;
+    }
+
+    public String[] getHeaders() {
+        return headers;
+    }
+
+    public String getSignature() {
+        return signature;
     }
 }
