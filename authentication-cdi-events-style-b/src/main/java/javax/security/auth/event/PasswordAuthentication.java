@@ -16,6 +16,17 @@
  */
 package javax.security.auth.event;
 
+/**
+ * Event to support Basic and FORM authentication methods
+ *
+ * Identified in IETF spec with recent update:
+ *
+ *  - http://tools.ietf.org/html/draft-ietf-httpauth-basicauth-update
+ *
+ * HTTP Authorization header example:
+ *
+ * Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
+ */
 public class PasswordAuthentication extends Authentication {
 
     private final String username;

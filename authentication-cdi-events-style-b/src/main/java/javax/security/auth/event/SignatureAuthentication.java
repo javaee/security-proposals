@@ -21,6 +21,21 @@
 //
 package javax.security.auth.event;
 
+/**
+ * Event object to support "Signing HTTP Messages" draft specification
+ * identified as the "Signature" http authorization scheme
+ *
+ * http://tools.ietf.org/html/draft-cavage-http-signatures
+ *
+ * Example HTTP Authorization header:
+ *
+ * Authorization: Signature keyId="Test",algorithm="rsa-sha256",
+ *    headers="(request-target) host date", signature="KcLSABBj/m3v2Dhxi
+ *    CKJmzYJvnx74tDO1SaURD8Dr8XpugN5wpy8iBVJtpkHUIp4qBYpzx2QvD16t8X
+ *    0BUMiKc53Age+baQFWwb2iYYJzvuUL+krrl/Q7H6fPBADBsHqEZ7IE8rR0Ys3l
+ *    b7J5A6VB9J/4yVTRiBcxTypW/mpr5w="
+ *
+ */
 public class SignatureAuthentication extends Authentication {
 
     private final String keyId;
