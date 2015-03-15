@@ -16,6 +16,7 @@
 
   <modules>
     <module>authentication-cdi-events-style-a</module>
+    <module>authentication-cdi-events-style-b</module>
   </modules>
 </project>
 
