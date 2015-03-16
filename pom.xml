@@ -18,6 +18,7 @@
     <module>authentication-cdi-events-style-a</module>
     <module>authentication-cdi-events-style-b</module>
     <module>simple-annotated-security-provider</module>
+    <module>simple-annotated-login-module</module>
   </modules>
 </project>
 
