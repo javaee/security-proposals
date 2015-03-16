@@ -1,1 +1,31 @@
 # simple-annotated-login-module
+
+https://java.net/jira/browse/JAVAEE_SECURITY_SPEC-10
+
+From: Arjan Tijms
+
+Following the presence of such simplified login module in the application, the following should hold:
+
+- The application is considered to be in a default security realm.
+- The application will make use of this security realm (no explicit mention in web.xml required).
+- Whenever a container login is triggered, MyAuthenticator is used for authentication (only username/password supported of course)
+- If authentication succeeds, the String returned by getUserName will be what HttpServletRequest#getUserPrincipal.getName() and corresponding methods in EJB etc return.
+- For each String inside the list returned by getApplicationRoles, methods like HttpServletRequest#isUserInRole will return true, and annotations like @RolesAllowed referencing those will be considered satisfied.
+- No upfront declaration of roles in any descriptor is required.
+- The roles returned by getApplicationRoles should be directly useable in the application. Specifically, things as (vendor specific) group to role mappings (such as what happens in GlassFish) should not be required.
+
+Example of standardized installation of a JASPI authentication module in application.xml or web.xml:
+
+```
+<server-auth-module>
+    <class-name>my.example.HTTPBasicServerAuthModule</class-name>
+    <property>
+        <name>usersProperties</name>
+        <value>somepath/users.properties</value>
+     </property>
+</server-auth-module>
+```
+
+Alternatively, the presence of a JASPI authentication module inside the application annotated with a special annotation (perhaps the same one as used for the simplified login module), can have the same effect of having the module automatically installed.
+
+Like the simplified login module, when such a JASPI authentication module is declared in an application, no further configuration, role mapping or role declarations should be required, other than those that are specific for the authentication module itself.
