@@ -1,1 +1,40 @@
 # simple-annotated-security-provider
+
+https://java.net/jira/browse/JAVAEE_SPEC-25
+
+From: Reza Rahman
+
+I think in the bare minimum we need to have something as simple as this:
+
+```
+import javax.inject.Inject;
+import javax.security.auth.OnAuthentication;
+import javax.security.auth.OnAuthorization;
+import javax.security.auth.SecurityProvider;
+import javax.security.auth.UserService;
+import java.security.Principal;
+
+@SecurityProvider
+public class MySecurityProvider {
+
+    @Inject
+    private UserService userService;
+
+    /**
+     * The parameters could suit the credentials mechanism being used.
+     */
+    @OnAuthentication
+    public Principal getPrincipal(String username, String password) {
+        // Construct the principal using the user service.
+        return null;
+    }
+
+    @OnAuthorization
+    public String[] getRoles(Principal principal) {
+        // Construct an array of roles using the principal and user service. }
+        return null;
+    }
+}
+```
+
+The exact sematics here is not important, just the general concept. I would hope this could be sorted out in the relevant expert group/groups. I know this is easier said than done. However, if Resin can do it (kind of), it can't be that hard either.
