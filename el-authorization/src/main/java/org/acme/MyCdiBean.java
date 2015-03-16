@@ -19,9 +19,39 @@
 // Community Process. In order to remain compliant with the specification
 // DO NOT add / change / or delete method signatures!
 //
-package javax.security.auth;
+package org.acme;
 
-@java.lang.annotation.Target({java.lang.annotation.ElementType.TYPE})
-@java.lang.annotation.Retention(java.lang.annotation.RetentionPolicy.RUNTIME)
-public @interface AppLoginModule {
+import javax.security.auth.EvaluateSecured;
+
+public class MyCdiBean {
+
+    @EvaluateSecured("principalName == 'Reza'")
+    public void green() {
+        // do something
+    }
+
+    @EvaluateSecured("isLoggedIn()")
+    public void blue() {
+        // do something
+    }
+
+    @EvaluateSecured("hasRole('dad')")
+    public void red() {
+        // do something
+    }
+
+    @EvaluateSecured("hasRoles('dad', 'spouse')")
+    public void white() {
+        // do something
+    }
+
+    @EvaluateSecured("hasAnyRole('dad', 'mom')")
+    public void orange() {
+        // do something
+    }
+
+    @EvaluateSecured("isSecureTransport()")
+    public void black() {
+        // do something
+    }
 }
