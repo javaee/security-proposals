@@ -1,1 +1,7 @@
 # user-and-role-service
+
+https://java.net/jira/browse/JAVAEE_SECURITY_SPEC-10
+
+From: Alex Kosowski
+
+The UserSource would be an adapter between the repository and the UserService. We would standardize UserSource implementations for various repository types (LDAP, DataSource,
