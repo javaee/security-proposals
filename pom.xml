@@ -22,6 +22,7 @@
     <module>user-and-role-service</module>
     <module>standard-caller-and-group-principals</module>
     <module>standard-security-context</module>
+    <module>el-authorization</module>
   </modules>
 </project>
 
