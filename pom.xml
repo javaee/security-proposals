@@ -20,6 +20,7 @@
     <module>simple-annotated-security-provider</module>
     <module>simple-annotated-login-module</module>
     <module>user-and-role-service</module>
+    <module>standard-caller-and-group-principals</module>
   </modules>
 </project>
 
