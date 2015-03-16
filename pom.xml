@@ -19,6 +19,7 @@
     <module>authentication-cdi-events-style-b</module>
     <module>simple-annotated-security-provider</module>
     <module>simple-annotated-login-module</module>
+    <module>user-and-role-service</module>
   </modules>
 </project>
 
