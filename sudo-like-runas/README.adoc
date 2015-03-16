@@ -1,1 +1,5 @@
 # sudo-like-runas
+
+JAVAEE_SECURITY_SPEC-16 - @RolesAllowed and @RunAs combinations
+
+From: David Blevins
