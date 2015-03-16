@@ -1,1 +1,5 @@
 # standard-caller-and-group-principals
+
+https://java.net/jira/browse/JAVAEE_SECURITY_SPEC-11
+
+From: Arjan Tijms
