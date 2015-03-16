@@ -1,1 +1,5 @@
 # standard-security-context
+
+https://java.net/jira/browse/JAVAEE_SECURITY_SPEC-12
+
+From: Arjan Tijms
