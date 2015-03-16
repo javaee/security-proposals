@@ -21,6 +21,7 @@
     <module>simple-annotated-login-module</module>
     <module>user-and-role-service</module>
     <module>standard-caller-and-group-principals</module>
+    <module>standard-security-context</module>
   </modules>
 </project>
 
