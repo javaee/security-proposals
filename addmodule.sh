@@ -1,6 +1,6 @@
 #!/bin/bash
 
-name=${1?Specify a module name}
+export name=${1?Specify a module name}
 
 mkdir $name &&
 cat > $name/pom.xml <<EOF
@@ -39,6 +39,6 @@ EOF
 mkdir -p $name/src/main/java/javax/security/auth &&
 mkdir -p $name/src/main/java/org/acme &&
 perl -i -pe 's,^( *)(</modules>),$1  <module>$ENV{name}</module>\n$1$2,' pom.xml &&
-echo "# $name" > $name/README.adoc &&
+echo "# $name" > $name/README.adoc
 git add $name &&
 git commit -m "Add $name" $name pom.xml
