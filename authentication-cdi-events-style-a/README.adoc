@@ -1,0 +1,22 @@
+== CDI based authentication
+
+The idea of using CDI event came on a discussion we add on the Apache TomEE community. It was meant to made the Apache Tomcat realms more usable.
+
+For instance, the Apache Tomcat Realm javadoc API is available at https://tomcat.apache.org/tomcat-7.0-doc/api/org/apache/catalina/realm/RealmBase.html
+
+Indeed, this interface and the realm model have some drawbacks
+
+* the interface is pretty rigid. It defines a set of methods to basically map authentication method from the Java Servlet Specification. It means that first,
+ if you need to add another authentication method like (Token for instance), you can't extend this interface.
+
+* then, event if you are only interested in the FORM based authentication, you have to implement anyway the other methods.
+
+* the realm needs to be in the container and of course, the authentication usually involves business logic. So it results in the business logic and all the webapp to
+ being package within the container as well.
+
+The idea here is to really on CDI events to decouple the container boiler plate from the business logic involved to authenticate a user so that you don't need to
+ push your entire application to the container. The other good side effect is that you can only observe the event you are interested in.
+
+The complete working example is available at https://github.com/apache/tomee/blob/tomee-1.7.x/examples/cdi-event-realm
+
+The idea can anyway provide us with some directions on how to use CDI events for authentication and authorization.
