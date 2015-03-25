@@ -24,6 +24,7 @@
     <module>standard-security-context</module>
     <module>el-authorization</module>
     <module>sudo-like-runas</module>
+    <module>jaspic-http-sam</module>
   </modules>
 
   <build>
