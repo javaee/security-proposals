@@ -1,8 +1,6 @@
 package org.acme;
 
-import javax.annotation.security.RolesAllowed;
 import javax.servlet.annotation.HttpConstraint;
-import javax.servlet.annotation.HttpMethodConstraint;
 import javax.servlet.annotation.ServletSecurity;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -11,21 +9,22 @@ import java.util.List;
 
 
 @Path("account")
-@ServletSecurity(httpMethodConstraints = {
-        @HttpMethodConstraint(value = "POST", rolesAllowed = {"USER"}),
-        @HttpMethodConstraint(value = "DEAD", rolesAllowed = {"ADMIN"})
-})
 public class AccountResource {
 
     @GET
-    @RolesAllowed("USER")
+    @HttpConstraint(
+            rolesAllowed = { "ADMIN", "USER" }
+    )
     public List<Account> read() {
         return null;
     }
 
 
     @POST
-    @HttpConstraint(rolesAllowed = "ADMIN")
+    @HttpConstraint(
+            transportGuarantee = ServletSecurity.TransportGuarantee.CONFIDENTIAL,
+            rolesAllowed = "ADMIN"
+    )
     public void create(final Account account) {
 
     }
