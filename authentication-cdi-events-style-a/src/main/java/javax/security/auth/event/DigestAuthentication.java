@@ -16,7 +16,7 @@
  */
 package javax.security.auth.event;
 
-public class DigestAuthenticationEvent extends BaseAuthenticationEvent {
+public class DigestAuthentication extends BaseAuthentication {
 
     private final String username;
     private final String digest;
@@ -27,8 +27,8 @@ public class DigestAuthenticationEvent extends BaseAuthenticationEvent {
     private final String realm;
     private final String md5a2;
 
-    public DigestAuthenticationEvent(final String username, final String digest, final String nonce, final String nc,
-                                     final String cnonce, final String qop, final String realm, final String md5a2) {
+    public DigestAuthentication(final String username, final String digest, final String nonce, final String nc,
+                                final String cnonce, final String qop, final String realm, final String md5a2) {
 
         this.username = username;
         this.digest = digest;

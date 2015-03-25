@@ -16,17 +16,17 @@
  */
 package javax.security.auth.event;
 
-import java.security.cert.X509Certificate;
+import java.security.Principal;
 
-public class SslAuthenticationEvent extends BaseAuthenticationEvent {
+public abstract class BaseAuthentication {
 
-    private final X509Certificate[] certs;
+    private Principal principal;
 
-    public SslAuthenticationEvent(final X509Certificate[] certs) {
-        this.certs = certs;
+    public Principal getPrincipal() {
+        return principal;
     }
 
-    public X509Certificate[] getCerts() {
-        return certs;
+    public void setPrincipal(final Principal principal) {
+        this.principal = principal;
     }
 }

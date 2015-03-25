@@ -18,13 +18,13 @@ package org.acme;
 
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.event.Observes;
-import javax.security.auth.event.UserPasswordAuthenticationEvent;
+import javax.security.auth.event.UserPasswordAuthentication;
 import java.util.Arrays;
 
 @RequestScoped
 public class AuthBean {
 
-    public void authenticate(@Observes final UserPasswordAuthenticationEvent event) {
+    public void authenticate(@Observes final UserPasswordAuthentication event) {
         final String username = event.getUsername();
         final String password = event.getCredential();
 
