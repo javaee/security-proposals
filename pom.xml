@@ -25,6 +25,7 @@
     <module>el-authorization</module>
     <module>sudo-like-runas</module>
     <module>jaxrs-http-constraints</module>
+    <module>jaspic-http-sam</module>
   </modules>
 
   <build>
