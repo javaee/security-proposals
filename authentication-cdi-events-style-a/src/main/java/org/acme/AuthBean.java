@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package javax.security.auth.event.org.cie.app;
+package org.acme;
 
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.event.Observes;
