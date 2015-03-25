@@ -1,4 +1,4 @@
-package javax.security.auth.event.org.cie.app;
+package org.acme;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.HttpConstraint;

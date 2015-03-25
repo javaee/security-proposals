@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class FindSecurityConstraintsEvent {
+public class FindSecurityConstraints {
 
     private final ServletRequest request;
     private final String context;
@@ -29,7 +29,7 @@ public class FindSecurityConstraintsEvent {
     private final List<String> roles = new ArrayList<String>();
     private String userConstraint;
 
-    public FindSecurityConstraintsEvent(final ServletRequest request, final String context) {
+    public FindSecurityConstraints(final ServletRequest request, final String context) {
         this.request = request;
         this.context = context;
     }
@@ -46,7 +46,7 @@ public class FindSecurityConstraintsEvent {
         return roles;
     }
 
-    public FindSecurityConstraintsEvent addRoles(final String... roles) {
+    public FindSecurityConstraints addRoles(final String... roles) {
         this.roles.addAll(Arrays.asList(roles));
         return this;
     }

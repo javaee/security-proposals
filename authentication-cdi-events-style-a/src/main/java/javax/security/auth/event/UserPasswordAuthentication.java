@@ -16,23 +16,22 @@
  */
 package javax.security.auth.event;
 
-import org.ietf.jgss.GSSContext;
+public class UserPasswordAuthentication extends BaseAuthentication {
 
-public class GssAuthenticationEvent extends BaseAuthenticationEvent {
+    private final String username;
+    private final String credential;
 
-    private final GSSContext gssContext;
-    private final boolean storeCreds;
 
-    public GssAuthenticationEvent(final GSSContext gssContext, final boolean storeCreds) {
-        this.gssContext = gssContext;
-        this.storeCreds = storeCreds;
+    public UserPasswordAuthentication(final String username, final String credential) {
+        this.username = username;
+        this.credential = credential;
     }
 
-    public GSSContext getGssContext() {
-        return gssContext;
+    public String getUsername() {
+        return username;
     }
 
-    public boolean isStoreCreds() {
-        return storeCreds;
+    public String getCredential() {
+        return credential;
     }
 }
