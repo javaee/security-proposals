@@ -27,6 +27,7 @@
     <module>jaspic-http-sam</module>
     <module>securitybindingtypeinterceptor</module>
     <module>jaxrs-http-constraints</module>
+    <module>named-permissions</module>
   </modules>
 
   <build>
