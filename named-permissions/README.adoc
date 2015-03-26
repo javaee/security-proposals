@@ -5,6 +5,7 @@ Named Permissions are defined in the [Octopus](https://bitbucket.org/contribute-
 The name is just an nicer way to refer to a permission (_OrderCreate_ instead of _order:create_ but more descriptive name can be given for some less saying permissions.
 
 This corresponds to the Jira issue 14 [Introduce Concept of Permissions in Authorization](https://java.net/jira/browse/JAVAEE_SECURITY_SPEC-14)
+
 ## Implied permissions
 
 An important aspect of the *DomainPermission*s in Shiro are the possibility to have implied permissions through the use of wild cards.
