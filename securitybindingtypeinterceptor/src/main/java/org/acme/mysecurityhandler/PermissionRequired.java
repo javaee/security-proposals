@@ -17,11 +17,13 @@
 package org.acme.mysecurityhandler;
 
 import javax.enterprise.util.Nonbinding;
+import javax.security.auth.SecurityBindingType;
 
 /**
  * Sample for a custom permission annotation.
  * @author <a href="mailto:struberg@yahoo.de">Mark Struberg</a>
  */
+@SecurityBindingType
 public @interface PermissionRequired
 {
     /**
