@@ -28,6 +28,7 @@
     <module>securitybindingtypeinterceptor</module>
     <module>jaxrs-http-constraints</module>
     <module>named-permissions</module>
+    <module>voter</module>
   </modules>
 
   <build>
