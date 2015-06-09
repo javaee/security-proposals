@@ -29,6 +29,7 @@
     <module>jaxrs-http-constraints</module>
     <module>named-permissions</module>
     <module>voter</module>
+    <module>identity-store</module>
   </modules>
 
   <build>
