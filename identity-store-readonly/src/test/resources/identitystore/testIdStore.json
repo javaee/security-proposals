@@ -1,0 +1,60 @@
+{	
+    "callers": [
+        {
+            "name": "jsmith",
+            "groups": ["admin", "user"],
+            "roles": ["VIEW_ACCT", "EDIT_ACCT"],
+			"credentials": [
+				{
+					"type": "javax.security.identitystore.credential.UsernamePasswordCredential",
+    			    "value": "70a5b4215270a19492788cf76c9e591a9334ac2363213765674e5181babbea1b",
+				    "hash-algorithm": "SHA-256",
+				    "hash-salt": "NaCl"
+				},
+				{
+					"type": "javax.security.identitystore.credential.TokenCredential",
+					"value": "ASDJFWEJ;WKJQDSJKLDVJKVALS;KJ",
+				  	"attributes": [
+					  {
+						"name": "expires",
+						"value": "1440034787"
+					  }
+				    ]
+				},
+				{
+					"type": "javax.security.identitystore.CredentialValidatorTest$X509ClientCertCredential",
+					"value": ""
+				},
+				{
+					"type": "javax.security.identitystore.ValidateCredentialTest_JsonStore$ByteCredential",
+					"value": "d2VsY29tZTE="
+				}
+			],
+		  "attributes": [
+			{
+			  "name": "locked",
+			  "value": "true"
+			},
+			{
+			  "name": "expired",
+			  "value": "true"
+			}
+		  ]
+        },
+        {
+            "name": "jlee",
+            "groups": ["deployer"],
+            "roles": ["VIEW_ACCT"],
+			"credentials": [
+				{
+					"type": "javax.security.identitystore.credential.UsernamePasswordCredential",
+					"value": "welcome1"
+				},
+				{
+					"type": "javax.security.identitystore.credential.TokenCredential",
+					"value": "ASDJFWEJ;FGSKREJTEJ;KJ"
+				}
+			]
+        }
+    ] 
+}

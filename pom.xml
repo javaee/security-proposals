@@ -30,6 +30,7 @@
     <module>named-permissions</module>
     <module>voter</module>
     <module>identity-store</module>
+    <module>identity-store-readonly</module>
   </modules>
 
   <build>
