@@ -14,23 +14,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.acme.ee7;
+package org.acme;
 
+import javax.security.auth.Authenticator;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.HttpConstraint;
+import javax.servlet.annotation.ServletSecurity;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@Authenticator("javax.security.authenticator.OpenIDConnect")
+@WebServlet("/SimpleServlet")
+@ServletSecurity(
+        @HttpConstraint(rolesAllowed = {"manager"})
+)
 public class MyServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-        if (request.isUserInRole("admin")) {
-            // do something
-        }
+        response.getWriter().print("my GET");
 
-        throw new ServletException("User is unauthorized.");
     }
 }
+

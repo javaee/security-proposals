@@ -31,6 +31,7 @@
     <module>voter</module>
     <module>identity-store</module>
     <module>identity-store-readonly</module>
+    <module>standardized-authenticators</module>
   </modules>
 
   <build>

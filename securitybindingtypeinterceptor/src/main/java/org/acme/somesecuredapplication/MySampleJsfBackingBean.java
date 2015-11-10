@@ -21,13 +21,13 @@ import org.acme.mysecurityhandler.PermissionRequired;
 /**
  * Some sample of a secured JSF backing bean using a custom
  * security mechanism
+ *
  * @author <a href="mailto:struberg@yahoo.de">Mark Struberg</a>
  * @author <a href="mailto:jporter@redhat.com>Jason Porter</a>
  * @author <a href="mailto:thorben@thoughts-on-java.org>Thorben Janssen</a>
  */
 // @PermissionRequired could also go here if we improve the logic of our {@link PermissionRequiredAuthorizer}
-public class MySampleJsfBackingBean
-{
+public class MySampleJsfBackingBean {
     private int meaningOfLife = 42;
 
 
@@ -41,13 +41,11 @@ public class MySampleJsfBackingBean
         return "showAdminStuff.xhtml";
     }
 
-    public int getMeaningOfLife()
-    {
+    public int getMeaningOfLife() {
         return meaningOfLife;
     }
 
-    public void setMeaningOfLife(int meaningOfLife)
-    {
+    public void setMeaningOfLife(int meaningOfLife) {
         this.meaningOfLife = meaningOfLife;
     }
 }
