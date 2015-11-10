@@ -20,10 +20,10 @@ import javax.enterprise.util.Nonbinding;
 
 /**
  * Sample for a custom permission annotation.
+ *
  * @author <a href="mailto:struberg@yahoo.de">Mark Struberg</a>
  */
-public @interface PermissionRequired
-{
+public @interface PermissionRequired {
     /**
      * List of permissions. Execution should be permitted if the user has <em>any</em> of these permissions.
      *

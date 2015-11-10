@@ -12,10 +12,6 @@
  */
 package javax.security.auth.message.http;
 
-import static javax.security.auth.message.AuthStatus.SEND_SUCCESS;
-
-import java.lang.Class;import java.lang.IllegalStateException;import java.lang.Override;import java.lang.String;import java.lang.SuppressWarnings;import java.util.Map;
-
 import javax.security.auth.Subject;
 import javax.security.auth.callback.CallbackHandler;
 import javax.security.auth.message.AuthException;
@@ -26,71 +22,72 @@ import javax.security.auth.message.config.ServerAuthContext;
 import javax.security.auth.message.module.ServerAuthModule;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
+
+import static javax.security.auth.message.AuthStatus.SEND_SUCCESS;
 
 /**
  * https://java.net/jira/browse/JASPIC_SPEC-17
- *
+ * <p/>
  * A server authentication module (SAM) implementation base class, tailored for the Servlet Container Profile.
  *
  * @author Arjan Tijms
- *
  */
 public abstract class HttpServerAuthModule implements ServerAuthModule {
 
-	private CallbackHandler handler;
-	private Map<String, String> options;
-	private final Class<?>[] supportedMessageTypes = new Class[] { HttpServletRequest.class, HttpServletResponse.class };
-	
-	@Override
-	@SuppressWarnings("unchecked")
-	public void initialize(MessagePolicy requestPolicy, MessagePolicy responsePolicy, CallbackHandler handler, @SuppressWarnings("rawtypes") Map options) throws AuthException {
-		this.handler = handler;
-		this.options = options;
+    private CallbackHandler handler;
+    private Map<String, String> options;
+    private final Class<?>[] supportedMessageTypes = new Class[]{HttpServletRequest.class, HttpServletResponse.class};
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public void initialize(MessagePolicy requestPolicy, MessagePolicy responsePolicy, CallbackHandler handler, @SuppressWarnings("rawtypes") Map options) throws AuthException {
+        this.handler = handler;
+        this.options = options;
 //		initializeModule(new HttpMsgContext(handler, options, null, null));
-	}
+    }
 
-	/**
-	 * A Servlet Container Profile compliant implementation should return HttpServletRequest and HttpServletResponse, so
-	 * the delegation class {@link ServerAuthContext} can choose the right SAM to delegate to.
-	 */
-	@Override
-	public Class<?>[] getSupportedMessageTypes() {
-		return supportedMessageTypes;
-	}
+    /**
+     * A Servlet Container Profile compliant implementation should return HttpServletRequest and HttpServletResponse, so
+     * the delegation class {@link ServerAuthContext} can choose the right SAM to delegate to.
+     */
+    @Override
+    public Class<?>[] getSupportedMessageTypes() {
+        return supportedMessageTypes;
+    }
 
-	@Override
-	public AuthStatus validateRequest(MessageInfo messageInfo, Subject clientSubject, Subject serviceSubject) throws AuthException {
-		HttpMessageContext msgContext = null;
+    @Override
+    public AuthStatus validateRequest(MessageInfo messageInfo, Subject clientSubject, Subject serviceSubject) throws AuthException {
+        HttpMessageContext msgContext = null;
 //		HttpMsgContext msgContext = new HttpMsgContext(handler, options, messageInfo, clientSubject);
-		return validateHttpRequest(msgContext.getRequest(), msgContext.getResponse(), msgContext);
-	}
+        return validateHttpRequest(msgContext.getRequest(), msgContext.getResponse(), msgContext);
+    }
 
-	@Override
-	public AuthStatus secureResponse(MessageInfo messageInfo, Subject serviceSubject) throws AuthException {
-		return SEND_SUCCESS;
-	}
+    @Override
+    public AuthStatus secureResponse(MessageInfo messageInfo, Subject serviceSubject) throws AuthException {
+        return SEND_SUCCESS;
+    }
 
-	/**
-	 * Called in response to a {@link HttpServletRequest#logout()} call.
-	 *
-	 */
-	@Override
-	public void cleanSubject(MessageInfo messageInfo, Subject subject) throws AuthException {
+    /**
+     * Called in response to a {@link HttpServletRequest#logout()} call.
+     */
+    @Override
+    public void cleanSubject(MessageInfo messageInfo, Subject subject) throws AuthException {
 //	    HttpMsgContext msgContext = new HttpMsgContext(handler, options, messageInfo, subject);
-	    HttpMessageContext msgContext = null;
-		cleanHttpSubject(msgContext.getRequest(), msgContext.getResponse(), msgContext);
-	}
-	
-	public void initializeModule(HttpMessageContext httpMessageContext) {
-		
-	}
+        HttpMessageContext msgContext = null;
+        cleanHttpSubject(msgContext.getRequest(), msgContext.getResponse(), msgContext);
+    }
 
-	public AuthStatus validateHttpRequest(HttpServletRequest request, HttpServletResponse response, HttpMessageContext httpMessageContext) throws AuthException {
-		throw new IllegalStateException("Not implemented");
-	}
+    public void initializeModule(HttpMessageContext httpMessageContext) {
 
-	public void cleanHttpSubject(HttpServletRequest request, HttpServletResponse response, HttpMessageContext httpMessageContext) {
-	    httpMessageContext.cleanClientSubject();
-	}
+    }
+
+    public AuthStatus validateHttpRequest(HttpServletRequest request, HttpServletResponse response, HttpMessageContext httpMessageContext) throws AuthException {
+        throw new IllegalStateException("Not implemented");
+    }
+
+    public void cleanHttpSubject(HttpServletRequest request, HttpServletResponse response, HttpMessageContext httpMessageContext) {
+        httpMessageContext.cleanClientSubject();
+    }
 
 }

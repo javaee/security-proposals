@@ -26,13 +26,14 @@ import java.lang.annotation.Target;
 
 /**
  * This annotation is used to delegate a method as the provider for a specific authorization check.
- *
+ * <p/>
  * This defines a method which handles the security check for the given
  * custom {@link javax.security.auth.SecurityBindingType} annotation.
  * The method signature needs to be
  * <pre>
  * boolean methodName(InvocationContext ic)
  * </pre>
+ *
  * @author The Apache DeltaSpike Team
  */
 @Target(ElementType.METHOD)

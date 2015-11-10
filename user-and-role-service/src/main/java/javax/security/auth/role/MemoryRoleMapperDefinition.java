@@ -28,5 +28,6 @@ package javax.security.auth.role;
 @java.lang.annotation.Retention(java.lang.annotation.RetentionPolicy.RUNTIME)
 public @interface MemoryRoleMapperDefinition {
     String name();
+
     RoleMap[] users();
 }

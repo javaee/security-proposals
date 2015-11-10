@@ -18,13 +18,13 @@ package javax.security.auth.event;
 
 /**
  * Event to support Basic and FORM authentication methods
- *
+ * <p/>
  * Identified in IETF spec with recent update:
- *
- *  - http://tools.ietf.org/html/draft-ietf-httpauth-basicauth-update
- *
+ * <p/>
+ * - http://tools.ietf.org/html/draft-ietf-httpauth-basicauth-update
+ * <p/>
  * HTTP Authorization header example:
- *
+ * <p/>
  * Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
  */
 public class PasswordAuthentication extends Authentication {

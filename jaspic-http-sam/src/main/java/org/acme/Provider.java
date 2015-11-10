@@ -12,7 +12,7 @@ import java.util.Base64;
 import static javax.security.auth.message.AuthStatus.FAILURE;
 
 public class Provider extends HttpServerAuthModule {
-    
+
     @Override
     public AuthStatus validateHttpRequest(HttpServletRequest request,
                                           HttpServletResponse response,
@@ -35,11 +35,11 @@ public class Provider extends HttpServerAuthModule {
         // the login after we return from this method.
 
         return httpMessageContext.notifyContainerAboutLogin(
-            // The name of the authenticated user
-            "snoopy",
+                // The name of the authenticated user
+                "snoopy",
 
-            // the groups/roles of the authenticated user
-            Arrays.asList("RedBaron", "JoeCool", "MansBestFriend")
+                // the groups/roles of the authenticated user
+                Arrays.asList("RedBaron", "JoeCool", "MansBestFriend")
         );
     }
 

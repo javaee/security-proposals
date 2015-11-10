@@ -27,6 +27,7 @@ import java.lang.annotation.Target;
 
 /**
  * Applied to an annotation to indicate that it is a security binding type
+ *
  * @author The Apache DeltaSpike Team
  */
 @Target(ElementType.TYPE)

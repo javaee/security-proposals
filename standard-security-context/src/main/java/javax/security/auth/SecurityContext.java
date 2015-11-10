@@ -36,14 +36,23 @@ public interface SecurityContext {
 
     // Potential
     List<String> getAllUsersRoles();
+
     boolean isAuthenticated();
+
     boolean isUserInAnyRole(List<String> roles);
+
     boolean isUserInAllRoles(List<String> roles);
+
     void login(Object request, Object response);
+
     void login(Map map);
+
     void logout();
-    void runAs(String role, Function<?,?> function);
+
+    void runAs(String role, Function<?, ?> function);
+
     boolean hasAccessToResource();
+
     boolean hasAccessToBeanMethod();
 
 }
