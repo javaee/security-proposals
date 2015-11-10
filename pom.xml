@@ -26,6 +26,11 @@
     <module>sudo-like-runas</module>
     <module>jaspic-http-sam</module>
     <module>securitybindingtypeinterceptor</module>
+    <module>jaxrs-http-constraints</module>
+    <module>named-permissions</module>
+    <module>voter</module>
+    <module>identity-store</module>
+    <module>identity-store-readonly</module>
     <module>standardized-authenticators</module>
   </modules>
 

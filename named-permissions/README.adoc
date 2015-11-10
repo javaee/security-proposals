@@ -1,0 +1,27 @@
+# named-permissions
+
+Named Permissions are defined in the [Octopus](https://bitbucket.org/contribute-bitbucket/javaeesecurityfirst) framework and are an extension to the DomainPermissions of Apache Shiro (see [Permissions in shiro](https://shiro.apache.org/permissions.html).
+
+The name is just an nicer way to refer to a permission (_OrderCreate_ instead of _order:create_ but more descriptive name can be given for some less saying permissions.
+
+This corresponds to the Jira issue 14 [Introduce Concept of Permissions in Authorization](https://java.net/jira/browse/JAVAEE_SECURITY_SPEC-14)
+
+## Implied permissions
+
+An important aspect of the *DomainPermission*s in Shiro are the possibility to have implied permissions through the use of wild cards.
+
+So a user who has the permission _order_ has also the permission _oder:create_.
+
+## PermissionsRequired
+
+This is like the *RolesAllowed* annotation but then based on the NamedPermission concept.
+
+## Scenario how it can work.
+
+There needs to be a list of all permissions which are available in the application (just like for the roles).  The can be defined by configuration (XML) but also pragmatically.
+
+When the code encounters the @PermissionsRequired annotation, it retrieves from the central location the permissions object.  And verifies if the Caller/Subject has the permission (implied or directly, this doesn't matter).
+
+The implementation of this check is done in javax.security.auth.NamedPermission#implies(NamedPermission)
+
+

@@ -1,0 +1,28 @@
+= Proposed Identity Store based on PicketLink IDM for JSR 375 EE Security API: Java API, and JavaDoc Generation
+
+The identity-store module contains the sources to generate the Java API jar, and the JavaDoc. The proposed identity-store is built upon PicketLink IDM. See http://picketlink.org/appsecurity/idm/ for more info about PicketLink IDM. 
+
+
+== Generating the Java API and JavaDoc
+
+Just enter `mvn` at the command line in this directory. Maven will generate the following artifacts.
+
+API Jar::
+* The jar containing the identity-store interfaces and classes
+* In the directory: `identity-store/target`
+
+API JavaDoc::
+* The JavaDoc for the identity-store interfaces and classes, excluding PicketLink IDM
+* In the directory: `identity-store/target/site/apidocs`
+
+== Java Source
+
+API Source::
+* The source code for the identity-store interfaces and classes
+* In the directory: `identity-store/src/main/java`
+
+Unit Test Source::
+* The source code for the API unit tests
+* In the directory: `identity-store/src/test/java`
+
+

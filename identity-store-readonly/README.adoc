@@ -1,0 +1,27 @@
+= Proposed Read-only Identity Store for JSR 375 EE Security API: Java API, and JavaDoc Generation
+
+The identity-store-readonly module contains the sources to generate the Java API jar, and the JavaDoc.
+
+
+== Generating the Java API and JavaDoc
+
+Just enter `mvn` at the command line in this directory. Maven will generate the following artifacts.
+
+API Jar::
+* The jar containing the identity-store-readonly interfaces and classes
+* In the directory: `identity-store-readonly/target`
+
+API JavaDoc::
+* The JavaDoc for the identity-store-readonly interfaces and classes
+* In the directory: `identity-store-readonly/target/site/apidocs`
+
+== Java Source
+
+API Source::
+* The source code for the identity-store-readonly interfaces and classes
+* In the directory: `identity-store-readonly/src/main/java`
+
+Unit Test Source::
+* The source code for the API unit tests
+* In the directory: `identity-store-readonly/src/test/java`
+
