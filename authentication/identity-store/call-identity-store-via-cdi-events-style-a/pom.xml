@@ -1,0 +1,13 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>net.java.jsr375</groupId>
+    <artifactId>identity-store</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>call-identity-store-via-cdi-events-style-a</artifactId>
+
+</project>
+
