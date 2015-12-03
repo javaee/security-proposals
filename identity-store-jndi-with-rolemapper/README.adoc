@@ -1,0 +1,27 @@
+# user-and-role-service
+
+https://java.net/jira/browse/JAVAEE_SECURITY_SPEC-10
+
+From: Alex Kosowski (edited by Arjan Tijms)
+
+START Evaluation by Arjan Tijms
+
+This proposal models primarily a mutable identity store with many operations. Most of those operations go far beyond the minimal {credentials in/identity out} that containers themselves call.
+
+The identity store is represented by the IdentityStore interface. There are definition (factory) annotations for various standardized implementations. Usage of these annotations by
+applications will cause an IdentityStore implementation to be made available via JNDI.
+
+The {identity out} part of the {credentials in/identity out} function comes from the UserInfo class that is returned by IdentityStore#loadUserByUsername.
+
+The {credentials in} part of the {credentials in/identity out} function is not shown in this proposal.
+
+This proposal also models a role mapper, which largely follows the same pattern as the identity store.
+
+Finally, the proposal seems to model an authentication mechanism (orginally called authenticator). TODO: I'm not 100% if this indeed models an authentication mechanism such as a JASPIC SAM
+does.
+
+
+END Evaluation by Arjan Tijms
+
+
+The IdentityStore annotations would be an adapter between the repository and the IdentityStore interface. We would standardize IdentityStore implementations for various repository types (LDAP, DataSource,
