@@ -22,7 +22,7 @@ import javax.security.auth.event.UserPasswordAuthentication;
 import java.util.Arrays;
 
 @RequestScoped
-public class AuthBean {
+public class MyIdentityStore {
 
     public void authenticate(@Observes final UserPasswordAuthentication event) {
         final String username = event.getUsername();

@@ -1,5 +1,21 @@
 == CDI based authentication
 
+START Evaluation by Arjan Tijms
+
+This proposal models an identity store, where the store is called by throwing a CDI event (sub class of BaseAuthentication).
+
+The {credentials in} part of the {credentials in/identity out} function comes from the data provided by a specific sub class of the base CDI event.
+
+The {identity out} part of the {credentials in/identity out} function comes from setting the principal on the base CDI event.
+
+As such, BaseAuthentication is essentially the base interface of the generic identity store. Subclasses like UserPasswordAuthentication are essentially
+interfaces for credential specific identity stores. 
+
+What happens when there are multiple observers for an event?  
+
+END Evaluation by Arjan Tijms
+ 
+
 The idea of using CDI event came on a discussion we add on the Apache TomEE community.
 It was meant to made the Apache Tomcat realms more usable.
 
