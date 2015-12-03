@@ -10,12 +10,12 @@ I think in the bare minimum we need to have something as simple as this:
 import javax.inject.Inject;
 import javax.security.auth.OnAuthentication;
 import javax.security.auth.OnAuthorization;
-import javax.security.auth.SecurityProvider;
+import javax.security.auth.IdentityStore;
 import javax.security.auth.UserService;
 import java.security.Principal;
 
-@SecurityProvider
-public class MySecurityProvider {
+@IdentityStore
+public class MyIdentityStore {
 
     @Inject
     private UserService userService;

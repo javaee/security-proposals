@@ -21,7 +21,10 @@
 //
 package javax.security.auth;
 
-@java.lang.annotation.Target({java.lang.annotation.ElementType.TYPE})
-@java.lang.annotation.Retention(java.lang.annotation.RetentionPolicy.RUNTIME)
-public @interface SecurityProvider {
+import static java.lang.annotation.ElementType.METHOD;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+
+@java.lang.annotation.Target({METHOD})
+@java.lang.annotation.Retention(RUNTIME)
+public @interface OnAuthorization {
 }

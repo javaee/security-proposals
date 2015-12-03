@@ -25,6 +25,6 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>simple-annotated-security-provider</artifactId>
+  <artifactId>simple-annotated-identity-store-b</artifactId>
 
 </project>

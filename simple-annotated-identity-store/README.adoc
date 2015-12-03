@@ -1,4 +1,4 @@
-# simple-annotated-login-module
+# simple-annotated-identity-store
 
 https://java.net/jira/browse/JAVAEE_SECURITY_SPEC-10
 
@@ -26,6 +26,6 @@ Example of standardized installation of a JASPI authentication module in applica
 </server-auth-module>
 ```
 
-Alternatively, the presence of a JASPI authentication module inside the application annotated with a special annotation (perhaps the same one as used for the simplified login module), can have the same effect of having the module automatically installed.
+Alternatively, the presence of a JASPIC authentication module inside the application annotated with a special annotation (perhaps the same one as used for the simplified identity store), can have the same effect of having the module automatically installed.
 
-Like the simplified login module, when such a JASPI authentication module is declared in an application, no further configuration, role mapping or role declarations should be required, other than those that are specific for the authentication module itself.
+Like the simplified identity store, when such a JASPIC authentication module is declared in an application, no further configuration, role mapping or role declarations should be required, other than those that are specific for the authentication module itself.

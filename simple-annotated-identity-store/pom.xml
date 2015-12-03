@@ -25,6 +25,6 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>simple-annotated-login-module</artifactId>
+  <artifactId>simple-annotated-identity-store</artifactId>
 
 </project>

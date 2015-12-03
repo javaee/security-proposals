@@ -14,33 +14,14 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.acme;
+//
+// This source code implements specifications defined by the Java
+// Community Process. In order to remain compliant with the specification
+// DO NOT add / change / or delete method signatures!
+//
+package javax.security.auth;
 
-import javax.inject.Inject;
-import javax.security.auth.OnAuthentication;
-import javax.security.auth.OnAuthorization;
-import javax.security.auth.SecurityProvider;
-import javax.security.auth.UserService;
-import java.security.Principal;
-
-@SecurityProvider
-public class MySecurityProvider {
-
-    @Inject
-    private UserService userService;
-
-    /**
-     * The parameters could suit the credentials mechanism being used.
-     */
-    @OnAuthentication
-    public Principal getPrincipal(String username, String password) {
-        // Construct the principal using the user service.
-        return null;
-    }
-
-    @OnAuthorization
-    public String[] getRoles(Principal principal) {
-        // Construct an array of roles using the principal and user service. }
-        return null;
-    }
+@java.lang.annotation.Target({java.lang.annotation.ElementType.TYPE})
+@java.lang.annotation.Retention(java.lang.annotation.RetentionPolicy.RUNTIME)
+public @interface IdentityStore {
 }
