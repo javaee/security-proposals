@@ -17,22 +17,22 @@
 package org.acme;
 
 import javax.inject.Inject;
-import javax.security.auth.AppLoginModule;
-import javax.security.auth.PasswordLoginModule;
+import javax.security.auth.AppIdentityStore;
+import javax.security.auth.PasswordIdentityStore;
 import javax.security.auth.User;
 import javax.security.auth.UserService;
 import javax.security.auth.login.FailedLoginException;
 import java.util.List;
 
-@AppLoginModule
-public class MyAuthenticator implements PasswordLoginModule {
+@AppIdentityStore
+public class MyIdentityStore implements PasswordIdentityStore {
 
     private User user;
 
     @Inject
     private UserService userService;
 
-    public MyAuthenticator() {
+    public MyIdentityStore() {
     }
 
     public void authenticate(String name, String password) throws FailedLoginException {

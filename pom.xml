@@ -18,7 +18,7 @@
     <module>authentication-cdi-events-style-a</module>
     <module>authentication-cdi-events-style-b</module>
     <module>simple-annotated-security-provider</module>
-    <module>simple-annotated-login-module</module>
+    <module>simple-annotated-identity-store</module>
     <module>user-and-role-service</module>
     <module>standard-caller-and-group-principals</module>
     <module>standard-security-context</module>

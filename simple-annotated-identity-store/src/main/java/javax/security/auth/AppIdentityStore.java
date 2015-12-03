@@ -21,15 +21,10 @@
 //
 package javax.security.auth;
 
-import javax.security.auth.login.FailedLoginException;
-import java.util.List;
+import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
-public interface PasswordLoginModule {
-
-    public void authenticate(String name, String password) throws FailedLoginException;
-
-    public String getUserName();
-
-    public List<String> getApplicationRoles();
-
+@java.lang.annotation.Target({TYPE})
+@java.lang.annotation.Retention(RUNTIME)
+public @interface AppIdentityStore {
 }
