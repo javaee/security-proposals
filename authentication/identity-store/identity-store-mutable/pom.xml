@@ -1,15 +1,16 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-    <parent>
-      <groupId>net.java.jsr375</groupId>
-      <artifactId>identity-store</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </parent>
+	<parent>
+		<groupId>net.java.jsr375</groupId>
+		<artifactId>identity-store</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
 
 	<artifactId>identity-store-mutable</artifactId>
 
@@ -31,6 +32,13 @@
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.10.2</version>
 				<configuration>
@@ -39,7 +47,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-        <defaultGoal>clean package javadoc:javadoc</defaultGoal>
+		<defaultGoal>clean package javadoc:javadoc</defaultGoal>
 	</build>
 	<dependencies>
 		<dependency>
