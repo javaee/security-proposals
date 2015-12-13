@@ -6,10 +6,6 @@
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<properties>
-		<rootDir>.</rootDir>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>javax</groupId>
@@ -45,12 +41,13 @@
 						</execution>
 					</executions>
 					<configuration>
-						<header>../header.txt</header>
+						<header>../../header.txt</header>
 						<properties>
 							<owner>Oracle</owner>
 							<currentYear>2015</currentYear>
 						</properties>
 						<excludes>
+							<exclude>**/*.adoc</exclude>
 							<exclude>**/pom.xml</exclude>
 							<exclude>**/README</exclude>
 							<exclude>**/settings.xml</exclude>
@@ -58,7 +55,7 @@
 							<exclude>src/main/resources/**</exclude>
 						</excludes>
 						<headerDefinitions>
-							<headerDefinition>../headers.xml</headerDefinition>
+							<headerDefinition>../../headers.xml</headerDefinition>
 						</headerDefinitions>
 						<mapping>
 							<java>JAVA_STYLE</java>
