@@ -5,7 +5,8 @@
 	<artifactId>jsr375-proposals</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
-
+	<inceptionYear>2015</inceptionYear>
+	
 	<dependencies>
 		<dependency>
 			<groupId>javax</groupId>
@@ -41,7 +42,7 @@
 						</execution>
 					</executions>
 					<configuration>
-						<header>../../header.txt</header>
+						<header>../../../src/license/header.txt</header>
 						<properties>
 							<owner>Oracle</owner>
 							<currentYear>2015</currentYear>
@@ -55,7 +56,7 @@
 							<exclude>src/main/resources/**</exclude>
 						</excludes>
 						<headerDefinitions>
-							<headerDefinition>../../headers.xml</headerDefinition>
+							<headerDefinition>../../../src/license/headers.xml</headerDefinition>
 						</headerDefinitions>
 						<mapping>
 							<java>JAVA_STYLE</java>
@@ -77,6 +78,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	<inceptionYear>2015</inceptionYear>
 </project>
 
