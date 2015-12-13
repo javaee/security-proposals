@@ -19,4 +19,4 @@ to the project's POM.
 
 Templates and settings defined in [license](license) are based on the entire project cloned. 
 
-Should modules have a deeper or more shallow hierarchy, it may be necessary to adjust the configuration of ``header`` and ``headerDefinition`` from the parent POM.
+Should modules have a different hierarchy, it may be necessary to adjust the configuration of ``header`` and ``headerDefinition`` from the parent POM.
