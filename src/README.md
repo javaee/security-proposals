@@ -2,7 +2,7 @@
 To treat license headers in a unified and compliant way, this project uses the Mycila Licnse Maven Plugin
 http://code.mycila.com/license-maven-plugin/
 
-In (non-POM) projects simply add:
+In a (non-POM) project simply add:
 
 ```
 <build>
@@ -18,3 +18,5 @@ In (non-POM) projects simply add:
 to the project's POM. 
 
 Templates and settings defined in [license](license) are based on the entire project cloned. 
+
+Should modules have a deeper or more shallow hierarchy, it may be necessary to adjust the configuration of ``header`` and ``headerDefinition`` from the parent POM.
