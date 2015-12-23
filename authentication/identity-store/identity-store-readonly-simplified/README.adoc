@@ -1,0 +1,13 @@
+= Proposed read-only simplified Identity Store
+
+A somewhat simplified variant of the the "identity-store-read-only" proposal. 
+
+In particular, this proposal omits the persistence and query packages and adds 
+"[storeType]Definition" annotations that in analogy to @DataSourceDefinition
+are intended to instruct the container to make an implementation of the requested type available.
+
+
+
+
+
+

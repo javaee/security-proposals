@@ -18,6 +18,7 @@
 	<modules>
 		<module>identity-store-mutable</module>
 		<module>identity-store-readonly</module>
+        <module>identity-store-readonly-simplified</module>
 		<module>call-identity-store-via-cdi-events-style-a</module>
 		<module>call-identity-store-via-cdi-events-style-b</module>
 		<module>simple-annotated-identity-store</module>
