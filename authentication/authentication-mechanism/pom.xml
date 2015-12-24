@@ -15,6 +15,7 @@
     <name>Java EE Security Proposals: Authentication - Authentication mechanism</name>
 
     <modules>
+        <module>jaspic-cdi-interface</module>
         <module>jaspic-http-sam</module>
     </modules>
     

@@ -1,0 +1,18 @@
+# jaspic-cdi-interface
+
+Proposed early draft of API and example implementation for the authentication mechanism. 
+
+The API lives in javax.security.authentication.mechanism.http
+Implementation lives in org.glassfish.jsr375
+
+Main API class is javax.security.authentication.mechanism.http.HttpAuthenticationMechanism.
+
+The concept of this proposal is that a CDI extension detects the presence of an enabled bean that implements HttpAuthenticationMechanism,
+and if found installs a JASPIC bridge SAM. This bridge SAM uses CDI to obtain the HttpAuthenticationMechanism instance and delegate its methods
+to.
+
+This in effect causes CDI to be fully available in the HttpAuthenticationMechanism, but doesn't require the JASPIC SAM itself to
+be a CDI bean.
+
+HttpAuthenticationMechanism is based on the similarly named type from the jaspic-http-sam proposal, but here it's an interface and a type to which
+a SAM delegates, but is itself not a SAM.
