@@ -13,9 +13,9 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-	<artifactId>edr1</artifactId>
+	<artifactId>soteria-edr1</artifactId>
 
-	<name>edr1</name>
+	<name>soteria-edr1</name>
 
 	<dependencies>
 		<dependency>

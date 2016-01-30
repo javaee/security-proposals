@@ -34,7 +34,7 @@
         
         <dependency>
             <groupId>net.java.jsr375</groupId>
-            <artifactId>edr1</artifactId>
+            <artifactId>soteria-edr1</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

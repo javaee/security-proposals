@@ -19,7 +19,7 @@
 		<module>authorization</module>
 		<module>authentication</module>
 		<module>overall</module>
-        <module>edr1</module>
+        <module>soteria-edr1</module>
         <module>apps</module>
 	</modules>
 
