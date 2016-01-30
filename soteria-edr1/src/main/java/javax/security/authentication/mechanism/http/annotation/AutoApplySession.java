@@ -51,11 +51,11 @@ import javax.resource.spi.AuthenticationMechanism;
 
 /**
  * The AutoApplySession annotation provides an application the ability to declarative designate 
- * that an {@link AuthenticationMechanism} uses the <code>javax.servlet.http.registerSession<code> 
+ * that an {@link AuthenticationMechanism} uses the <code>javax.servlet.http.registerSession</code> 
  * and auto applies this for every request.
  * 
  * <p>
- * See the JASPIC specification for further details on <code>javax.servlet.http.registerSession<code>.
+ * See the JASPIC specification for further details on <code>javax.servlet.http.registerSession</code>.
  * 
  * <p>
  * This support is provided via an implementation of an interceptor spec interceptor that conducts the

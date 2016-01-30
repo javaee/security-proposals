@@ -31,8 +31,8 @@ public class DefaultAuthConfigProvider implements AuthConfigProvider {
     /**
      * Constructor with signature and implementation that's required by API.
      * 
-     * @param properties
-     * @param factory
+     * @param properties provider properties
+     * @param factory the auth config factory
      */
     public DefaultAuthConfigProvider(Map<String, String> properties, AuthConfigFactory factory) {
         this.providerProperties = properties;

@@ -233,6 +233,8 @@ public final class Jaspic {
 	 * user is going to be authenticated (as opposed to using the handler for the "do nothing" protocol
 	 * which uses the unauthenticated identity).
 	 * 
+	 * @param request The involved HTTP servlet request.
+	 * 
 	 */
 	public static void setDidAuthentication(HttpServletRequest request) {
 		request.setAttribute(DID_AUTHENTICATION, TRUE);
@@ -243,6 +245,11 @@ public final class Jaspic {
 	 * the current request.
 	 * Does not necessarily mean that authentication has indeed succeeded, for this
 	 * the actual user/caller principal should be checked as well.
+	 * 
+	 * @param request The involved HTTP servlet request.
+	 * 
+	 * @return true if a SAM has indicated that it intended authentication to be happening during
+     * the current request.
 	 * 
 	 */
 	public static boolean isDidAuthentication(HttpServletRequest request) {

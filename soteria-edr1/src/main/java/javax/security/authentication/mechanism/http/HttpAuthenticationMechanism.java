@@ -87,7 +87,7 @@ public interface HttpAuthenticationMechanism {
      * <p>
      * This method is called in response to an HTTP client request for a resource, and is always invoked 
      * <strong>before</strong> any {@link Filter} or {@link HttpServlet}. Additionally this method is called
-     * in response to {@link HttpServletRequest#authenticate(HttpServletResponse).}
+     * in response to {@link HttpServletRequest#authenticate(HttpServletResponse)}
      * 
      * <p>
      * Note that by default this method is <strong>always</strong> called for every request, independent of whether

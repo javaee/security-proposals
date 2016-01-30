@@ -62,6 +62,8 @@ public @interface DataBaseIdentityStoreDefinition {
     /**
      * Full JNDI name of the data source that provides access to the data base where the 
      * caller identities are stored. 
+     * 
+     * @return Full JNDI name of the data source
      */
 	String dataSourceLookup() default "java:comp/DefaultDataSource"; // default data source
 	
@@ -78,7 +80,9 @@ public @interface DataBaseIdentityStoreDefinition {
 	 * <code>
 	 * select password from caller where name = ?
 	 * </code>
-	 * <pre>
+	 * </pre>
+	 * 
+	 * @return SQL query to validate
 	 */
 	String callerQuery();
 	
@@ -95,18 +99,24 @@ public @interface DataBaseIdentityStoreDefinition {
      * <code>
      * select group_name from caller_groups where caller_name = ?
      * </code>
-     * <pre>
+     * </pre>
+     * 
+     * @return SQL query to retrieve the groups
      */
 	String groupsQuery();
 	
 	/**
 	 * Hash algorithm applied to plain text password for comparison with password
 	 * returned from {@link #groupsQuery()}.
+	 * 
+	 * @return Hash algorithm applied to plain text password
 	 */
 	String hashAlgorithm() default ""; // default no hash (for now) todo: make enum?
 	
 	/**
 	 * Encoding used for hash. TODO
+	 * 
+	 *  @return Encoding used for hash
 	 */
 	String hashEncoding() default ""; // default no encoding (for now) todo: make enum?
 

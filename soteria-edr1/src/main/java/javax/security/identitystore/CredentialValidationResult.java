@@ -88,7 +88,7 @@ public class CredentialValidationResult {
 	 *
 	 * @param status
 	 *            Validation status
-	 * @param callerName
+	 * @param callerPrincipal
 	 *            Validated caller
 	 * @param groups
 	 *            Groups associated with the caller from the identity store

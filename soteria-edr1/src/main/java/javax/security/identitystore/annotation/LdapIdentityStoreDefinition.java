@@ -62,12 +62,16 @@ public @interface LdapIdentityStoreDefinition {
     /**
      * URL where the LDAP server can be reached.
      * E.g. <code>ldap://localhost:33389"</code>
+     * 
+     * @return URL where the LDAP server can be reached
      */
     String url() default "";
     
     /**
      * Base of the distinguished name that contains the caller name.
      * E.g. <code>ou=caller,dc=jsr375,dc=net</code>
+     * 
+     * @return Base of the distinguished name that contains the caller name
      */
     String callerBaseDn() default "";
     
@@ -98,13 +102,17 @@ public @interface LdapIdentityStoreDefinition {
      * sn: Peter
      * userPassword: secret1
      * </code>
-     * <pre>
+     * </pre>
+     * 
+     * @return Name of the attribute that contains the caller name
      */
     String callerNameAttribute() default "uid";
     
     /**
      * Base of the distinguished name that contains the groups
      * E.g. <code>ou=group,dc=jsr375,dc=net</code>
+     * 
+     * @return Base of the distinguished name that contains the groups
      */
 	String groupBaseDn() default "";
 	
@@ -121,6 +129,8 @@ public @interface LdapIdentityStoreDefinition {
      * <li> {@link #groupBaseDn()} corresponds to <code>ou=group,dc=jsr375,dc=net</code> </li>
      * <li> <code>foo</code> is the group name that will be returned by the store when authentication succeeds</li>
      * </ul>
+     * 
+     * @return Name of the attribute that contains the group name
 	 */
 	String groupNameAttribute() default "cn";
 	
@@ -139,7 +149,9 @@ public @interface LdapIdentityStoreDefinition {
      * member: uid=pete,ou=caller,dc=jsr375,dc=net
      * member: uid=john,ou=caller,dc=jsr375,dc=net 
      * </code>
-     * <pre>
+     * </pre>
+     * 
+     * @return DN attribute for the group DN
 	 */
 	String groupCallerDnAttribute() default "member";
 

@@ -65,6 +65,8 @@ public @interface BasicAuthenticationMechanismDefinition {
      * Note that contrary to what happens in some proprietary Servlet products, this
      * realm name <b>does not</b> couple a named identity store configuration to the 
      * authentication mechanism.  
+     * 
+     * @return Name of realm
      */
     String realmName() default "";
 }

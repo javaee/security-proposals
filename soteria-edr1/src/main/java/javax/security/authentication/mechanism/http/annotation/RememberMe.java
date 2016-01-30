@@ -102,6 +102,8 @@ public @interface RememberMe {
      * 
      * @see Cookie#setMaxAge(int)
      * 
+     * @return Max age in seconds
+     * 
      */
     @Nonbinding
     int cookieMaxAgeSeconds() default 86400; // 1 day
@@ -112,6 +114,8 @@ public @interface RememberMe {
      * to a boolean outcome. All named CDI beans are available to the expression
      * as well as default classes as specified by EL 3.0 for the {@link ELProcessor}
      * and the implicit object "this" which refers to the interceptor target.
+     * 
+     * @return EL expression to determine if remember me should be used
      * 
      */
     @Nonbinding

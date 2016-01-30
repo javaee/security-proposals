@@ -42,7 +42,6 @@ package javax.security.identitystore.credential;
 /**
  * <code>RememberMeCredential</code> represents a credential presented as a token,
  * for the explicit usage with the JSR 375 provided remember me function.
- * <p>
  *
  */
 public class RememberMeCredential implements Credential {
@@ -52,7 +51,6 @@ public class RememberMeCredential implements Credential {
     /**
      * Constructor
      *
-     * @param caller The caller associated with this credential
      * @param token  The token value to compare for authentication.
      */
     public RememberMeCredential(String token) {

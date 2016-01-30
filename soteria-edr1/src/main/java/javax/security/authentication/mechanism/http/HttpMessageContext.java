@@ -64,7 +64,7 @@ public interface HttpMessageContext {
     /**
      * Checks if the current request is to a protected resource or not. A protected resource
      * is a resource (e.g. a Servlet, JSF page, JSP page etc) for which a constraint has been defined
-     * in e.g. <code>web.xml<code>.
+     * in e.g. <code>web.xml</code>.
      * 
      * @return true if a protected resource was requested, false if a public resource was requested.
      */
@@ -117,6 +117,8 @@ public interface HttpMessageContext {
 
     /**
      * Returns the named module option that was set on the auth module to which this context belongs.
+     * 
+     * @param key name of the module option
      * 
      * @return the named module option that was set on the auth module to which this context belongs, or null if no option with that name was set.
      */

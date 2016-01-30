@@ -42,7 +42,6 @@ package javax.security.identitystore.credential;
 /**
  * <code>TokenCredential</code> represents a credential presented as a token,
  * such as a JWT or a proprietary token value.
- * <p>
  *
  */
 public class TokenCredential implements Credential {

@@ -65,8 +65,8 @@ import javax.security.identitystore.IdentityStore;
  *  {@literal @}Credentials(callerName = "peter", password = "secret1", groups = { "foo", "bar" }),
  *  {@literal @}Credentials(callerName = "john", password = "secret2", groups = { "foo", "kaz" }),
  *  {@literal @}Credentials(callerName = "carla", password = "secret3", groups = { "foo" }) })
- * <code>
- * <pre>
+ * </code>
+ * </pre>
  * 
  * @author Arjan Tijms
  *
@@ -79,6 +79,8 @@ public @interface EmbeddedIdentityStoreDefinition {
 
     /**
      * Defines the caller identities stored in the embedded identity store
+     * 
+     * @return caller identities stored in the embedded identity store
      */
     Credentials[] value() default {};
 

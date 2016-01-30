@@ -59,16 +59,22 @@ public @interface Credentials {
     
     /**
      * Name of caller. This is the name a caller uses to authenticate with.
+     * 
+     * @return Name of caller
      */
     String callerName();
 
     /**
      * A text-based password used by the caller to authenticate.
+     * 
+     * @return A text-based password
      */
     String password();
 
     /**
      * The optional list of groups that the specified caller is in.
+     * 
+     * @return optional list of groups
      */
     String[] groups() default {};
 }
