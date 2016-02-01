@@ -33,19 +33,19 @@ import org.glassfish.soteria.mechanisms.AuthenticationParametersImpl;
  */
 public final class Jaspic {
 	
-	public static final String IS_AUTHENTICATION = "org.glassfish.jsr375.security.message.request.authentication";
-	public static final String IS_AUTHENTICATION_FROM_FILTER = "org.glassfish.jsr375.security.message.request.authenticationFromFilter";
-	public static final String IS_SECURE_RESPONSE = "org.glassfish.jsr375.security.message.request.secureResponse";
-	public static final String IS_REFRESH = "org.glassfish.jsr375.security.message.request.isRefresh";
-	public static final String DID_AUTHENTICATION = "org.glassfish.jsr375.security.message.request.didAuthentication";
+	public static final String IS_AUTHENTICATION = "org.glassfish.soteria.security.message.request.authentication";
+	public static final String IS_AUTHENTICATION_FROM_FILTER = "org.glassfish.soteria.security.message.request.authenticationFromFilter";
+	public static final String IS_SECURE_RESPONSE = "org.glassfish.soteria.security.message.request.secureResponse";
+	public static final String IS_REFRESH = "org.glassfish.soteria.security.message.request.isRefresh";
+	public static final String DID_AUTHENTICATION = "org.glassfish.soteria.security.message.request.didAuthentication";
 	
-	public static final String AUTH_PARAMS = "org.glassfish.jsr375.security.message.request.authParams";
+	public static final String AUTH_PARAMS = "org.glassfish.soteria.security.message.request.authParams";
 	
-	public static final String LOGGEDIN_USERNAME = "org.glassfish.jsr375.security.message.loggedin.username";
-	public static final String LOGGEDIN_ROLES = "org.glassfish.jsr375.security.message.loggedin.roles";
-	public static final String LAST_AUTH_STATUS = "org.glassfish.jsr375.security.message.authStatus";
+	public static final String LOGGEDIN_USERNAME = "org.glassfish.soteria.security.message.loggedin.username";
+	public static final String LOGGEDIN_ROLES = "org.glassfish.soteria.security.message.loggedin.roles";
+	public static final String LAST_AUTH_STATUS = "org.glassfish.soteria.security.message.authStatus";
 	
-	public static final String CONTEXT_REGISTRATION_ID = "org.glassfish.jsr375.security.message.registrationId";
+	public static final String CONTEXT_REGISTRATION_ID = "org.glassfish.soteria.security.message.registrationId";
 	
 	// Key in the MessageInfo Map that when present AND set to true indicated a protected resource is being accessed.
 	// When the resource is not protected, GlassFish omits the key altogether. WebSphere does insert the key and sets
