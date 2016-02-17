@@ -39,21 +39,19 @@
  */
 package javax.security.identitystore.annotation;
 
-import static java.lang.annotation.ElementType.TYPE;
-import static java.lang.annotation.RetentionPolicy.RUNTIME;
-
+import javax.security.identitystore.IdentityStore;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import javax.security.identitystore.IdentityStore;
+import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
  * Annotation used to define a container provided {@link IdentityStore} that stores
- * caller credentials and identity attributes (together caller identities) in an 
+ * caller credentials and identity attributes (together caller identities) in an
  * LDAP store, and make that implementation available as an enabled CDI bean.
- * 
- * @author Arjan Tijms
  *
+ * @author Arjan Tijms
  */
 @Retention(RUNTIME)
 @Target(TYPE)
@@ -62,24 +60,25 @@ public @interface LdapIdentityStoreDefinition {
     /**
      * URL where the LDAP server can be reached.
      * E.g. <code>ldap://localhost:33389"</code>
-     * 
+     *
      * @return URL where the LDAP server can be reached
      */
     String url() default "";
-    
+
     /**
      * Base of the distinguished name that contains the caller name.
      * E.g. <code>ou=caller,dc=jsr375,dc=net</code>
-     * 
+     * When this member value is specified, direct binding is attempted, see also baseDn
+     *
      * @return Base of the distinguished name that contains the caller name
      */
     String callerBaseDn() default "";
-    
+
     /**
      * Name of the attribute that contains the caller name in the node
      * just below the one identified by {@link #callerBaseDn()}.
      * E.g. <code>uid</code>
-     * <p>
+     * <p/>
      * Example for the relationship with {@link #callerBaseDn()} and the name
      * of the caller that needs to be authenticated:
      * <br>
@@ -89,7 +88,7 @@ public @interface LdapIdentityStoreDefinition {
      * <li> {@link #callerBaseDn()} corresponds to <code>ou=caller,dc=jsr375,dc=net</code> </li>
      * <li> <code>peter</code> is the caller name that needs to be authenticated </li>
      * </ul>
-     * <p>
+     * <p/>
      * The following gives an example in ldif format:
      * <pre>
      * <code>
@@ -103,24 +102,24 @@ public @interface LdapIdentityStoreDefinition {
      * userPassword: secret1
      * </code>
      * </pre>
-     * 
+     *
      * @return Name of the attribute that contains the caller name
      */
     String callerNameAttribute() default "uid";
-    
+
     /**
      * Base of the distinguished name that contains the groups
      * E.g. <code>ou=group,dc=jsr375,dc=net</code>
-     * 
+     *
      * @return Base of the distinguished name that contains the groups
      */
-	String groupBaseDn() default "";
-	
-	/**
+    String groupBaseDn() default "";
+
+    /**
      * Name of the attribute that contains the group name in the node
      * just below the one identified by {@link #groupBaseDn()}.
      * E.g. <code>cn</code>
-     * <p>
+     * <p/>
      * Example for the relationship with {@link #groupBaseDn()} and the role name
      * <br>
      * Given the DN <code>cn=foo,ou=group,dc=jsr375,dc=net</code>,
@@ -129,15 +128,15 @@ public @interface LdapIdentityStoreDefinition {
      * <li> {@link #groupBaseDn()} corresponds to <code>ou=group,dc=jsr375,dc=net</code> </li>
      * <li> <code>foo</code> is the group name that will be returned by the store when authentication succeeds</li>
      * </ul>
-     * 
+     *
      * @return Name of the attribute that contains the group name
-	 */
-	String groupNameAttribute() default "cn";
-	
-	/**
-	 * DN attribute for the group DN that identifies the callers that are in that group.
-	 * E.g. <code>member</code>
-     * <p>
+     */
+    String groupNameAttribute() default "cn";
+
+    /**
+     * DN attribute for the group DN that identifies the callers that are in that group.
+     * E.g. <code>member</code>
+     * <p/>
      * The value of this attribute has to the full DN of the caller. The following gives an example
      * entry in ldif format:
      * <pre>
@@ -147,12 +146,47 @@ public @interface LdapIdentityStoreDefinition {
      * objectclass: groupOfNames
      * cn: foo
      * member: uid=pete,ou=caller,dc=jsr375,dc=net
-     * member: uid=john,ou=caller,dc=jsr375,dc=net 
+     * member: uid=john,ou=caller,dc=jsr375,dc=net
      * </code>
      * </pre>
-     * 
+     *
      * @return DN attribute for the group DN
-	 */
-	String groupCallerDnAttribute() default "member";
+     */
+    String groupCallerDnAttribute() default "member";
+
+    /**
+     * Base of the distinguished name for the application user that will be used to make the initial connection to the LDAP.
+     * This account needs search persons in the LDAP to find the actual DN of the user who we need to authenticate.
+     * When this member is filled in, the value in callerBaseDn is ignored.
+     * <p/>
+     * E.g. <code>uid=ldap,ou=apps,dc=jsr375,dc=net</code>
+     *
+     * @return The distinguished name for the application user.
+     */
+    String baseDn() default "";
+
+    /**
+     * Password for the application user defined by the baseDn member.
+     * Only used when the member baseDN is filled in.
+     *
+     * @return password for the application user.
+     */
+    String password() default "";
+
+    /**
+     * Search base for finding the user.
+     * Only used when the member baseDN is filled in.
+     *
+     * @return base for searching the LDAP tree for the user.
+     */
+    String searchBase() default "";
+
+    /**
+     * Search expression to find
+     * Only used when the member baseDN is filled in.
+     *
+     * @return Search expression to find the user.
+     */
+    String searchExpression() default "";
 
 }
