@@ -19,8 +19,6 @@
 		<module>authorization</module>
 		<module>authentication</module>
 		<module>overall</module>
-        <module>soteria-edr1</module>
-        <module>apps</module>
 	</modules>
 
 	<build>
