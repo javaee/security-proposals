@@ -6,7 +6,6 @@
         <groupId>net.java.jsr375</groupId>
         <artifactId>jsr375-proposals</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
     
     <artifactId>authentication</artifactId>
@@ -15,7 +14,6 @@
     <name>Java EE Security Proposals: Authentication</name>
 
     <modules>
-        <module>identity-store</module>
         <module>authentication-mechanism</module>
     </modules>
     

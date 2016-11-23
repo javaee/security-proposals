@@ -7,22 +7,26 @@
 		<groupId>net.java.jsr375</groupId>
 		<artifactId>authentication</artifactId>
 		<version>1.0-SNAPSHOT</version>
-		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<artifactId>identity-store</artifactId>
 	<packaging>pom</packaging>
 
 	<name>Java EE Security Proposals: Authentication - Identity Store</name>
-
+ 
 	<modules>
+	 <!--  
 		<module>identity-store-mutable</module>
 		<module>identity-store-readonly</module>
         <module>identity-store-readonly-simplified</module>
+       
 		<module>call-identity-store-via-cdi-events-style-a</module>
 		<module>call-identity-store-via-cdi-events-style-b</module>
+		
 		<module>simple-annotated-identity-store</module>
 		<module>simple-annotated-identity-store-b</module>
 		<module>identity-store-jndi-with-rolemapper</module>
+		-->
 	</modules>
+	
 </project>
