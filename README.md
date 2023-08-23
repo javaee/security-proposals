@@ -1,3 +1,8 @@
+# Project moved to Jakarta EE Security
+
+Please browse to the current EE security project at https://github.com/jakartaee/security/
+This archive is read-only, for legacy review.
+
 # javaee-security-proposals
 Play area for possible Java EE Security Concepts
 
